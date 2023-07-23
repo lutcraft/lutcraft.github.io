@@ -20,14 +20,14 @@ mindmap: true
 ### 超链接
 
 ```
-[靠谱-ing](https://mazhuang.org)
+[靠谱-ing](https://lutcraft.github.io)
 
-<https://mazhuang.org>
+<https://lutcraft.github.io>
 ```
 
-[靠谱-ing](https://mazhuang.org)  
+[靠谱-ing](https://lutcraft.github.io)  
 
-<https://mazhuang.org>
+<https://lutcraft.github.io>
 
 ### 列表
 

@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://mazhuang.org
+url: https://lutcraft.github.io
 date_format: "ordinal"
 title: lutcraft的小屋
 subtitle: "Welcome!"
@@ -60,7 +60,7 @@ highlight_theme: github
 author: Iven Li
 organization: 
 organization_url: 
-github_username: lutcrfat
+github_username: lutcraft
 location: NanJin, China
 email: lutcraft666@gmail.com
 

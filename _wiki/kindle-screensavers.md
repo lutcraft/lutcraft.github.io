@@ -6,7 +6,7 @@ cate2:
 description: Kindle Paperwhite 屏保图片
 keywords: kindle, Screensavers, Paperwhite
 type: link
-link: https://mazhuang.org/kindle-paperwhite-screensavers/
+link: https://lutcraft.github.io/kindle-paperwhite-screensavers/
 ---
 
 Content here

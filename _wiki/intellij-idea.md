@@ -7,7 +7,7 @@ description: 最好用的 Java IDE
 keywords: IDEA, Java
 ---
 
-快捷键基本与 [Android Studio](https://mazhuang.org/wiki/android-studio/) 一致，这里重点记录解决遇到过的问题。
+快捷键基本与 [Android Studio](https://lutcraft.github.io/wiki/android-studio/) 一致，这里重点记录解决遇到过的问题。
 
 ## Q&A
 
@@ -42,9 +42,9 @@ org.springframework.beans.factory.BeanDefinitionStoreException: IOException pars
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:454)
 	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
 	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
-	at org.mazhuang.demo.protocol.db.DemoContext.init(DemoContext.java:22)
-	at org.mazhuang.demo.protocol.DemoServer.start(DemoServer.java:40)
-	at org.mazhuang.demo.DemoSrv.main(DemoSrv.java:17)
+	at org.lutcraft.demo.protocol.db.DemoContext.init(DemoContext.java:22)
+	at org.lutcraft.demo.protocol.DemoServer.start(DemoServer.java:40)
+	at org.lutcraft.demo.DemoSrv.main(DemoSrv.java:17)
 Caused by: java.io.FileNotFoundException: class path resource [spring-demo.xml] cannot be opened because it does not exist
 	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:158)
 	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:329)

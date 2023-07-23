@@ -75,7 +75,7 @@ private CalleeService calleeService;
 运行结果：**异常**。
 
 ```
-Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.mazhuang.injecttest.service.CalleeService' available: expected single matching bean but found 2: callee1ServiceImpl,callee2ServiceImpl
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.lutcraft.injecttest.service.CalleeService' available: expected single matching bean but found 2: callee1ServiceImpl,callee2ServiceImpl
 ```
 
 *此时将 Callee1ServiceImpl 或 Callee2ServiceImpl 注释掉其中一个之后，程序运行正常。*
@@ -97,7 +97,7 @@ public void test() {
 按变量名匹配的 Bean 进行注入。
 
 ```
-org.mazhuang.injecttest.service.impl.Callee1ServiceImpl
+org.lutcraft.injecttest.service.impl.Callee1ServiceImpl
 ```
 
 #### Case 3: Resource + 指定 name + 不匹配 Bean name 的变量名
@@ -126,7 +126,7 @@ public void test() {
 按 name 指定的 Bean 进行注入，变量名被忽略。
 
 ```
-org.mazhuang.injecttest.service.impl.Callee2ServiceImpl
+org.lutcraft.injecttest.service.impl.Callee2ServiceImpl
 ```
 
 #### Case 5: Resource + 指定 type + 不匹配 Bean name 的变量名
@@ -159,7 +159,7 @@ private CalleeService callee2ServiceImpl;
 在指定 type 的情况下，依然会优先根据变量名称去寻找 Bean，如果找不到 Bean，则根据 type 指定的类型去找；如果根据变量名找到的 Bean 的类型与 type 指定的不匹配，会抛出异常。
 
 ```
-Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'callee2ServiceImpl' is expected to be of type 'org.mazhuang.injecttest.service.impl.Callee1ServiceImpl' but was actually of type 'org.mazhuang.injecttest.service.impl.Callee2ServiceImpl'
+Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'callee2ServiceImpl' is expected to be of type 'org.lutcraft.injecttest.service.impl.Callee1ServiceImpl' but was actually of type 'org.lutcraft.injecttest.service.impl.Callee2ServiceImpl'
 ```
 
 #### Case 8: Resource + 指定正确 name + 指定 name 对应 type + 不匹配 Bean name 的变量名
@@ -192,7 +192,7 @@ private CalleeService calleeService;
 运行结果：**异常**。
 
 ```
-Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'callee1ServiceImpl' is expected to be of type 'org.mazhuang.injecttest.service.impl.Callee2ServiceImpl' but was actually of type 'org.mazhuang.injecttest.service.impl.Callee1ServiceImpl'
+Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'callee1ServiceImpl' is expected to be of type 'org.lutcraft.injecttest.service.impl.Callee2ServiceImpl' but was actually of type 'org.lutcraft.injecttest.service.impl.Callee1ServiceImpl'
 ```
 
 #### Case 11: Resource + 指定不正确 name + 指定 type
@@ -218,7 +218,7 @@ private CalleeService calleeService;
 运行结果：**异常**。
 
 ```java
-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'callerServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.mazhuang.injecttest.service.CalleeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'callerServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.lutcraft.injecttest.service.CalleeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
 ```
 
 #### Case 13: Autowired + 匹配 Bean name 的变量名
@@ -242,7 +242,7 @@ private CalleeService calleeService;
 此时将 Callee1ServiceImpl 和 Callee2ServiceImpl 注释掉其中一个就运行正常了。说明 Autowired 是优先按变量名寻找 Bean（没有 Qulifier 的前提下），如果找不到再按类型搜索。
 
 ```
-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'callerServiceImpl': Unsatisfied dependency expressed through field 'calleeService'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.mazhuang.injecttest.service.CalleeService' available: expected single matching bean but found 2: callee1ServiceImpl,callee2ServiceImpl
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'callerServiceImpl': Unsatisfied dependency expressed through field 'calleeService'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.lutcraft.injecttest.service.CalleeService' available: expected single matching bean but found 2: callee1ServiceImpl,callee2ServiceImpl
 ```
 
 #### Case 15: Autowired + 匹配 Bean name 的变量名 + Qualifier 匹配同一个 Bean name 的变量名
@@ -271,7 +271,7 @@ public void test() {
 运行结果：**正常**。
 
 ```
-org.mazhuang.injecttest.service.impl.Callee1ServiceImpl
+org.lutcraft.injecttest.service.impl.Callee1ServiceImpl
 ```
 
 通过 Qualifier 限定 Bean name 之后，变量名不再影响注入。
@@ -286,7 +286,7 @@ private CalleeService calleeService;
 运行结果：**异常**。
 
 ```
-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'callerServiceImpl': Unsatisfied dependency expressed through field 'calleeService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.mazhuang.injecttest.service.CalleeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'callerServiceImpl': Unsatisfied dependency expressed through field 'calleeService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.lutcraft.injecttest.service.CalleeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 ```
 
 #### Case 18: Autowired + 注掉 CalleeService 的所有实现 + required = false
