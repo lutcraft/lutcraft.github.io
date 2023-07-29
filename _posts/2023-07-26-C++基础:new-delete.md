@@ -67,3 +67,26 @@ delete [] r;
 如果我们采用了错误的delete方法,只```delete r```,会产生什么样的结果呢?
 
 这会导致,只会调用首个对象的析构函数,随后删除当初申请的整个空间.
+
+## 结构体也可以提供构造函数
+
+```cpp
+#include<iostream>
+using namespace std;
+
+struct stru
+{
+    int a;
+    stru():a(){}        //无参构造
+    stru(int i) :a(i){}//有参构造
+};
+
+
+int main(int argc, char const *argv[])
+{
+    struct stru s[5] = {stru(1), stru(2), stru(3)}; //前三个用有参,两个用无参
+    return 0;
+}
+
+
+```
