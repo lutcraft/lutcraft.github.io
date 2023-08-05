@@ -17,8 +17,3 @@ man gcc
 <img src="/images/wiki/Screenshot_20230805_115648.png" width="80%" alt="mangcc" />
 
 
-
-## 参考
-
-* [ART and Dalvik](https://source.android.com/devices/tech/dalvik/)
-* [Android 5.0 行为变更](https://developer.android.com/about/versions/android-5.0-changes.html)
