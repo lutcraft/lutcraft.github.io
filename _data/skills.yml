@@ -1,19 +1,22 @@
 - name: Software Engineer Keywords
   keywords:
+      - C/C++
       - Java
-      - C++
       - Python
       - Design Patterns
 
-- name: Mobile Developer Keywords
+- name: Application Software Development
   keywords:
-      - Android
-      - Reverse Engineering
+      - Telecommunication Platform
+      - Virtualization
+      - High Performance Server
+      - 5G
 
-- name: Windows Developer Keywords
+- name: Kernel Development
   keywords:
-      - Win32 SDK
-      - DuiLib
-      - WTL
-      - COM
-      - WinDbg
+      - Linux Kernel
+
+- name: Embedded Development
+  keywords:
+      - Assembler
+
