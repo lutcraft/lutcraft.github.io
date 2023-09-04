@@ -9,7 +9,7 @@ menu: 片段
 permalink: /fragments/
 ---
 
-> 零散的知识，简短的观点，作为片段汇集于此。
+> 微小的知识，也改变着这个世界。
 
 {% assign tagliststr = '' %}
 {% for item in site.fragments %}
